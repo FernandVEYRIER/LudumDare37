@@ -78,6 +78,8 @@
     <Compile Include="Assets\Scripts\CrateGenerator\CrateGenerator.cs" />
     <Compile Include="Assets\Scripts\CrateGenerator\MenuButtonGenerate.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Highscores.cs" />
+    <Compile Include="Assets\Scripts\MainMenuCallbacks.cs" />
     <Compile Include="Assets\Scripts\PlayerState.cs" />
     <Compile Include="Assets\Scripts\Rhum.cs" />
     <Compile Include="Assets\Scripts\TerrainManager.cs" />
