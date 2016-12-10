@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour {
 
 	[Header("HUD")]
 	[SerializeField] private GameObject panelPause = null;
+	[SerializeField] private Text textScore;
 
 	private eGameState _gameState = eGameState.PLAY;
 	private eGameState _gameStatePrev = eGameState.PLAY;
@@ -24,9 +26,26 @@ public class GameManager : MonoBehaviour {
 		get { return _terrainManager; }
 	}
 
+	public int Score {
+		get {
+			return (int)_score;
+		}
+	}
+
+	private float _score = 0;
+
 	void Awake()
 	{
 		GM = this;
+	}
+
+	void Update()
+	{
+		if (_gameState == eGameState.PLAY)
+		{
+			_score += Time.deltaTime * 2f;
+			textScore.text = Score.ToString();
+		}
 	}
 
 	public void LoadLevel(int level)
@@ -47,9 +66,19 @@ public class GameManager : MonoBehaviour {
 		{
 			if (panelPause != null)
 				panelPause.SetActive (true);
+			_gameStatePrev = _gameState;
 			_gameState = eGameState.PAUSE;
 			Time.timeScale = 0;
 		}
-		_gameStatePrev = _gameState;
+	}
+
+	void AddScore(int value)
+	{
+		_score += value;	
+	}
+
+	public void Quit()
+	{
+		Application.Quit ();
 	}
 }
