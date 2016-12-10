@@ -21,11 +21,13 @@ public class PlayerState : MonoBehaviour {
         if (coll.gameObject.tag == "crate" && invincibility == false)
         {
             this.GetComponent<Animator>().SetBool("Dead", true);
+			GameManager.GM.EndGame ();
             Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
         }
         else if (coll.gameObject.tag == "barrel" && invincibility == false && this.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= coll.gameObject.GetComponent<WoodenObject>().velocityBroke)
         {
             this.GetComponent<Animator>().SetBool("Dead", true);
+			GameManager.GM.EndGame ();
             Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
         }
         else if (coll.gameObject.tag =="rhum")

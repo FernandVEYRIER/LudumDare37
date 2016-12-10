@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class CrateGenerator : MonoBehaviour {
 	public GameObject []crates;
-	public float spawnIntervalMax = 5.0f;
-	public float spawnIntervalMin = 2.0f;
+	public float spawnIntervalMaxStart = 10.0f;
+	public float spawnIntervalMinStart = 8.0f;
+	public float spawnIntervalMaxEnd = 5.0f;
+	public float spawnIntervalMinEnd = 2.0f;
+	public float timeFromStartToEnd = 60.0f;
+	private float time;
 	private float nextSpawn;
 
 	void Start () {
-		nextSpawn = Random.Range (spawnIntervalMin, spawnIntervalMax);
+		nextSpawn = Random.Range (spawnIntervalMinStart, spawnIntervalMaxStart);
+		time = timeFromStartToEnd;
 	}
 
 	void Update () {
@@ -17,8 +22,12 @@ public class CrateGenerator : MonoBehaviour {
 			GameObject obj = Instantiate (crates[Random.Range(0, crates.Length)]);
 			obj.transform.SetParent (this.transform);
 			obj.transform.position = this.transform.position;
-			nextSpawn = Random.Range(spawnIntervalMin, spawnIntervalMax);
+			float spawnInterMin = (spawnIntervalMinStart - spawnIntervalMinEnd) * (time / timeFromStartToEnd) + spawnIntervalMinEnd;
+			float spawnInterMax = (spawnIntervalMaxStart - spawnIntervalMaxEnd) * (time / timeFromStartToEnd) + spawnIntervalMaxEnd;
+			nextSpawn = Random.Range(spawnInterMin, spawnInterMax);
+			Debug.Log ("Min: " + spawnInterMin + " | Max: " + spawnInterMax + " | time: " + time);
 		}
 		nextSpawn -= Time.deltaTime;
+		time = Mathf.Max (0, time - Time.deltaTime);
 	}
 }

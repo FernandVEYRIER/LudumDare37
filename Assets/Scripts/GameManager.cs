@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] private GameObject panelPause = null;
 	[SerializeField] private GameObject panelGame = null;
 	[SerializeField] private Text textScore;
+	[SerializeField] private Text textScoreEnd;
 	[SerializeField] private GameObject panelEnd = null;
 
 	private eGameState _gameState = eGameState.PLAY;
@@ -96,5 +97,6 @@ public class GameManager : MonoBehaviour {
 		if (panelEnd != null)
 			panelEnd.SetActive (true);
 		_gameState = eGameState.END;
+		textScoreEnd.text = Score.ToString();
 	}
 }
