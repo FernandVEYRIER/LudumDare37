@@ -10,7 +10,6 @@ public class PlayerState : MonoBehaviour {
 
     private bool invincibility = false;
     public int invincibilityTime;
-    public float velocityBroke;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +23,7 @@ public class PlayerState : MonoBehaviour {
             this.GetComponent<Animator>().SetBool("Dead", true);
             Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
         }
-        else if (coll.gameObject.tag == "barrel" && invincibility == false && this.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= velocityBroke)
+        else if (coll.gameObject.tag == "barrel" && invincibility == false && this.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= coll.gameObject.GetComponent<WoodenObject>().velocityBroke)
         {
             this.GetComponent<Animator>().SetBool("Dead", true);
             Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
