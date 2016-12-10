@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour {
 	private eGameState _gameState = eGameState.PLAY;
 	private eGameState _gameStatePrev = eGameState.PLAY;
 
+	[SerializeField] private TerrainManager _terrainManager;
+	public TerrainManager terrainManager {
+		get { return _terrainManager; }
+	}
+
 	void Awake()
 	{
 		GM = this;

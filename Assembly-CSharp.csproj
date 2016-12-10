@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CrateGenerator\CrateGenerator.cs" />
      <Compile Include="Assets\Scripts\CrateGenerator\MenuButtonGenerate.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\PlayerState.cs" />
      <Compile Include="Assets\Scripts\TerrainManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
