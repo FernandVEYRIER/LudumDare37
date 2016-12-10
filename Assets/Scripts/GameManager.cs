@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager GM;
 
+	[Header("HUD")]
+	[SerializeField] private GameObject panelPause = null;
+
 	private eGameState _gameState = eGameState.PLAY;
 	private eGameState _gameStatePrev = eGameState.PLAY;
 
@@ -30,11 +33,15 @@ public class GameManager : MonoBehaviour {
 	{
 		if (_gameState == eGameState.PAUSE)
 		{
+			if (panelPause != null)
+				panelPause.SetActive (false);
 			_gameState = _gameStatePrev;
 			Time.timeScale = 1;
 		}
 		else
 		{
+			if (panelPause != null)
+				panelPause.SetActive (true);
 			_gameState = eGameState.PAUSE;
 			Time.timeScale = 0;
 		}
