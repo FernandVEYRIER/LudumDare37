@@ -7,7 +7,6 @@ public class PlayerState : MonoBehaviour {
 	[SerializeField] private float playerVel = 0;
 
 	private Animator animator;
-	private Rigidbody2D rigidBody;
 
     private bool invincibility = false;
     public int invincibilityTime;
