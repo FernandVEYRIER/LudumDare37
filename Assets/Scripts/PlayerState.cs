@@ -13,7 +13,6 @@ public class PlayerState : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
-		rigidBody = this.GetComponent<Rigidbody2D> ();
 	}
 
     void OnCollisionEnter2D(Collision2D coll)
