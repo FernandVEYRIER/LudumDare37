@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuCallbacks : MonoBehaviour {
 
@@ -16,22 +17,27 @@ public class MainMenuCallbacks : MonoBehaviour {
 
     public void OnClickPlay()
     {
-        Debug.Log("Play");
+        SceneManager.LoadScene("MainLevel");
     }
 
     public void OnClickControls()
     {
-        Debug.Log("Controls");
+        SceneManager.LoadScene("Controls");
     }
 
     public void OnClickHighscores()
     {
-        Debug.Log("Highscores");
+        SceneManager.LoadScene("Highscores");
     }
 
     public void OnClickCredits()
     {
-        Debug.Log("Credits");
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void OnClickBackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void OnClickQuit()
