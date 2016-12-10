@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	public enum eGameState
-	{ WARMUP, PLAY, PAUSE }
+	{ WARMUP, PLAY, PAUSE, END }
 
 	public eGameState GameState
 	{ get { return _gameState; } }
@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour {
 
 	[Header("HUD")]
 	[SerializeField] private GameObject panelPause = null;
+	[SerializeField] private GameObject panelGame = null;
 	[SerializeField] private Text textScore;
+	[SerializeField] private GameObject panelEnd = null;
 
 	private eGameState _gameState = eGameState.PLAY;
 	private eGameState _gameStatePrev = eGameState.PLAY;
@@ -53,6 +55,11 @@ public class GameManager : MonoBehaviour {
 		SceneManager.LoadSceneAsync (level);
 	}
 
+	public void ReloadLevel()
+	{
+		SceneManager.LoadSceneAsync (SceneManager.GetActiveScene ().buildIndex);
+	}
+
 	public void Pause()
 	{
 		if (_gameState == eGameState.PAUSE)
@@ -80,5 +87,14 @@ public class GameManager : MonoBehaviour {
 	public void Quit()
 	{
 		Application.Quit ();
+	}
+
+	public void EndGame()
+	{
+		if (panelGame != null)
+			panelGame.SetActive (false);
+		if (panelEnd != null)
+			panelEnd.SetActive (true);
+		_gameState = eGameState.END;
 	}
 }
