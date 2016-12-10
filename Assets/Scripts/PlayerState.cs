@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour {
 
+	[SerializeField] private float playerVel = 0;
+
+	private Animator animator;
+	private Rigidbody2D rigidBody;
+
     private bool invincibility = false;
     public int invincibilityTime;
 	// Use this for initialization
 	void Start () {
+		animator = GetComponent<Animator> ();
+		rigidBody = this.GetComponent<Rigidbody2D> ();
 	}
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -49,5 +56,17 @@ public class PlayerState : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+		if (GameManager.GM.GameState == GameManager.eGameState.PLAY)
+		{
+			transform.Translate (-this.transform.right * playerVel * Time.deltaTime * (GameManager.GM.terrainManager.CurrentAngle));
+			if (GameManager.GM.terrainManager.CurrentAngle > 0)
+				this.transform.localScale = new Vector3(-1, 1, 1);
+			else if (GameManager.GM.terrainManager.CurrentAngle < 0)
+				this.transform.localScale = new Vector3(1, 1, 1);
+			//float currVel = (GameManager.GM.terrainManager.CurrentAngle / 100f) * playerVel * Time.deltaTime;
+			//Debug.Log ("Vel = " + currVel);
+			//rigidBody.velocity = new Vector2 (currVel, rigidBody.velocity.y);
+			animator.SetFloat ("Velocity", Mathf.Abs(GameManager.GM.terrainManager.CurrentAngle));
+		}
 	}
 }
