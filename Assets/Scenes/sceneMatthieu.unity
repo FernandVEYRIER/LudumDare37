@@ -414,11 +414,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4342121700304394, guid: 6098d12913219db49b03c30869f4fcf3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.45
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 4342121700304394, guid: 6098d12913219db49b03c30869f4fcf3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.89
+      value: -1.29
       objectReference: {fileID: 0}
     - target: {fileID: 4342121700304394, guid: 6098d12913219db49b03c30869f4fcf3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -443,6 +443,16 @@ Prefab:
     - target: {fileID: 4342121700304394, guid: 6098d12913219db49b03c30869f4fcf3, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50140794256169454, guid: 6098d12913219db49b03c30869f4fcf3,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114901099969767636, guid: 6098d12913219db49b03c30869f4fcf3,
+        type: 2}
+      propertyPath: velocityBroke
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6098d12913219db49b03c30869f4fcf3, type: 2}
@@ -461,11 +471,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4233407219911378, guid: ba0dcddead1fb1b42b8c5755b30efbe2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.17
+      value: -5.2
       objectReference: {fileID: 0}
     - target: {fileID: 4233407219911378, guid: ba0dcddead1fb1b42b8c5755b30efbe2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.57
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 4233407219911378, guid: ba0dcddead1fb1b42b8c5755b30efbe2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -489,6 +499,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4233407219911378, guid: ba0dcddead1fb1b42b8c5755b30efbe2, type: 2}
       propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114430685513731136, guid: ba0dcddead1fb1b42b8c5755b30efbe2,
+        type: 2}
+      propertyPath: velocityBroke
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
