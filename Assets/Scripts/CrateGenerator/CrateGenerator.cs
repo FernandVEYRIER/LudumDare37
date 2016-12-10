@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CrateGenerator : MonoBehaviour {
 	public GameObject crate = null;
-	public float spawnIntervalMax = 10.0f;
-	public float spawnIntervalMin = 5.0f;
+	public float spawnIntervalMax = 5.0f;
+	public float spawnIntervalMin = 2.0f;
 	private float nextSpawn;
 
 	void Start () {
