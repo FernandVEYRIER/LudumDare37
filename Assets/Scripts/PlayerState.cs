@@ -10,6 +10,8 @@ public class PlayerState : MonoBehaviour {
 
     private bool invincibility = false;
     public int invincibilityTime;
+    public float velocityBroke;
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
@@ -17,18 +19,18 @@ public class PlayerState : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "crate")
+        if (coll.gameObject.tag == "crate" && invincibility == false)
         {
-            Destroy(coll.gameObject);
-            if (invincibility == false)
-            {
-                this.GetComponent<Animator>().SetBool("Dead", true);
-                Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
-            }
+            this.GetComponent<Animator>().SetBool("Dead", true);
+            Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+        }
+        else if (coll.gameObject.tag == "barrel" && invincibility == false && this.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= velocityBroke)
+        {
+            this.GetComponent<Animator>().SetBool("Dead", true);
+            Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
         }
         else if (coll.gameObject.tag =="rhum")
         {
-            Destroy(coll.gameObject);
             invincibility = true;
             StartCoroutine(CoroutineInvincibility());
             Invoke("resetInvincibility", invincibilityTime);
