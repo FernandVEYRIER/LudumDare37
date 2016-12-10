@@ -16,22 +16,22 @@ public class MainMenuCallbacks : MonoBehaviour {
 
     public void OnClickPlay()
     {
-
+        Debug.Log("Play");
     }
 
     public void OnClickControls()
     {
-
+        Debug.Log("Controls");
     }
 
     public void OnClickHighscores()
     {
-
+        Debug.Log("Highscores");
     }
 
     public void OnClickCredits()
     {
-
+        Debug.Log("Credits");
     }
 
     public void OnClickQuit()
