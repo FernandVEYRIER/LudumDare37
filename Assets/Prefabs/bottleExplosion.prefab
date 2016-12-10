@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4289353997718080}
   - component: {fileID: 198004672782643834}
   - component: {fileID: 199479048912011324}
+  - component: {fileID: 114533740796316028}
   m_Layer: 0
   m_Name: bottleExplosion
   m_TagString: Untagged
@@ -35,12 +36,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1128112485572474}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.840973, y: -0.39880186, z: 0}
+  m_LocalPosition: {x: -4.214762, y: -1.6756771, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114533740796316028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128112485572474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b254765d61bb9d84180574e438c52b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198004672782643834
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -96,7 +108,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1077944486
+  randomSeed: 1411822507
   InitialModule:
     serializedVersion: 3
     enabled: 1
