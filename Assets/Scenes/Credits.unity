@@ -123,8 +123,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30.1, y: -25}
-  m_SizeDelta: {x: 403, y: 209}
+  m_AnchoredPosition: {x: 46, y: 11}
+  m_SizeDelta: {x: 403, y: 234}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &436616343
 MonoBehaviour:
@@ -158,21 +158,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Matthieu Tavernier  Game developper
-
-    Simon Robert         UI Designer
-
-    Vernand Ferier       Game developper
-
-    Theo Touzet          Game developper
-
-    Quentin Gasparotto   UI Designer
-
-    Nicolas Constanty    Designer
-
-    Victor Gouet         Sound Designer
-
-    Adrien Wery        Game Designer'
+  m_Text: "Matthieu Tavernier  Game developper\nSimon Robert         UI Designer\nFernand
+    Veyrier       Game developper\nTheo Touzet          Game developper\nQuentin Gasparotto
+    \  UI Designer\nNicolas Constanty    Designer\nVictor Gouet         Sound Designer\nAdrien
+    Wery        Game Designer\nAxel Vencatareddy\tGame Designer\n"
 --- !u!222 &436616344
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -479,7 +468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076294, y: 123}
+  m_AnchoredPosition: {x: 0.0000076294, y: 183}
   m_SizeDelta: {x: 215, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1474889889

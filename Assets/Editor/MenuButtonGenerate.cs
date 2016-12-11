@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
+[ExecuteInEditMode]
 public class MenuButtonGenerate : MonoBehaviour {
 	private static GameObject createObjectGenerator(Transform prt, string path = "Prefabs/Barrel")
 	{
